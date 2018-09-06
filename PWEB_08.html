@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<script src="jquery-3.3.1.min.js"></script>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+				<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+				</head>
+<body style="background-color:powderblue;">
+
+
+
+
+
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+
+	<div style="text-align: center;">
+
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Restaurante HTML com Bootstrap</h1>
+			</div>
+
+
+
+
+
+			<br>
+			<h1>Prato principal:&nbsp;
+				<br>
+				<input type="radio" name="pratoPrincipal" value="15" checked="true" id="1" autocomplete="off">Massa-------------- R$ 15&nbsp;
+
+				<br>
+				<input type="radio" name="pratoPrincipal" value="17" id="2" autocomplete="off">Carne -------------- R$ 17&nbsp;
+				<br>
+				<input type="radio" name="pratoPrincipal" value="16" id="3" autocomplete="off">Peixe --------------- R$ 16&nbsp;
+				<br>
+				<br>
+				<br>Acompanhamentos:&nbsp;
+				<br>
+				<input type="checkbox" name="acompanhamento" value="1" id="Salada">Salada ------------- R$ 2&nbsp;
+				<br>
+				<input type="checkbox" name="acompanhamento" value="2" id="Legumes">Legumes ---------- R$ 2&nbsp;
+				<br>
+				<input type="checkbox" name="acompanhamento" value="3" id="Farofa">Farofa ------------- R$ 2&nbsp;
+				<br>
+				<input type="checkbox" name="acompanhamento" value="4" id="Fritas">Fritas -------------- R$ 2&nbsp;
+				<br>
+
+
+
+				<br>Convenio:&nbsp;
+				<select name="convenio" id="Conv">&nbsp;&nbsp;
+					<option value="1" id="Nenhum">Nenhum</option>&nbsp;&nbsp;&nbsp;
+					<option value="2" id="Estudante">Estudante</option>&nbsp;&nbsp;&nbsp;
+					<option value="3" id="Servidor">Servidor Publico</option>&nbsp;&nbsp;&nbsp;
+				</select>&nbsp;
+				<br>
+
+
+
+
+
+				<br>Observacoes&nbsp;
+				<br>
+				<input type="textbox"> &nbsp;
+				<br>
+				<br>
+
+
+
+
+
+
+				<div class="container">
+					<!-- Trigger the modal with a button -->
+					<button id="btEnviar" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Calcular Valor</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" role="dialog">
+						<div class="modal-dialog">
+
+							<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-header">
+
+									<h4 class="modal-title">Valor</h4>
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+								</div>
+								<div class="modal-body">
+									<strong>
+										<line id="Text"> </line>
+										<line id="Texto"> </line>
+
+									</strong>
+
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+
+
+
+
+				<br>
+
+				<br>
+				<input type="submit" class="btn btn-success" name="Enviar">
+
+
+
+			</h1>
+
+
+			<script>
+					var pratoPrincipal = 0;
+					
+								$(document).ready(function(){
+										$("#btEnviar").click(function(){
+										var Acompanha = '';
+									 	var conve = '';
+										if($("#1").is(':checked')){
+											var pratoPrincipal = 15;							
+										}
+										if($("#2").is(':checked')){
+											var pratoPrincipal = 17;							
+										}
+										if($("#3").is(':checked')){
+											var pratoPrincipal = 16;							
+										}
+										
+										if($("#Salada").is(':checked')){
+											var pratoPrincipal = pratoPrincipal + 2;							
+										}
+
+										if($("#Legumes").is(':checked')){
+											var pratoPrincipal = pratoPrincipal + 2;							
+										}
+
+										if($("#Farofa").is(':checked')){
+											var pratoPrincipal = pratoPrincipal + 2;							
+										}
+
+										if($("#Fritas").is(':checked')){
+											var pratoPrincipal = pratoPrincipal + 2;							
+										}
+										
+
+
+										if($("#Estudante").is(':checked')){
+											var pratoPrincipal = pratoPrincipal - 10;							
+										}
+
+										if($("#Servidor").is(':checked')){
+											var pratoPrincipal = pratoPrincipal - 5;							
+										}
+
+										document.getElementById("Text").innerHTML = "Valor Total: ";
+										document.getElementById("Texto").innerHTML = pratoPrincipal;
+										
+				
+										});
+								});
+
+								
+					
+					</script>
+
+
+
+			</strong>
+
+		</div>
+</body>
+
+</html>
